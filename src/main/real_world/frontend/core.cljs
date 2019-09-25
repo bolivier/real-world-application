@@ -129,3 +129,13 @@
             (js/document.getElementById "root")))
 
 (init)
+
+(comment
+  ;; run this to get cider working
+  ;; M-x cider-jack-in-cljs
+  ;; pick shadow-cljs
+  ;; pick shadow
+  ;; choose the build :frontend
+
+  ;; shadow-cljs should be watching the build and hot-reloading everything.
+)
