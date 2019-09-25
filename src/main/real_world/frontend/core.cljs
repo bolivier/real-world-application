@@ -31,7 +31,7 @@
       [nav-item
        {:name ::about}
        [:i.ion-gear-a]
-        "Settings"]      
+        "Settings"]
       [:li.nav-item
        [:a.nav-link
         "Sign Up"]]]]]
@@ -44,9 +44,71 @@
      (let [view (:view (:data @match))]
        [view @match]))])
 
+(defn home-banner []
+  [:div.banner
+   [:div.container
+    [:h1.logo-font
+     "conduit"
+     [:p
+      "A place to share your knowledge"]]]])
+
+(def article-samples
+  [{:author-name "Eric Simons"
+    :profile-pic-url "http://i.imgur.com/Qr71crq.jpg"
+    :publication-date "January 20th"
+    :likes 29
+    :title "How to build webapps that scale"
+    :subtitle "This is the description for the post"}
+   {:author-name "Albert Pai"
+    :profile-pic-url "http://i.imgur.com/N4VcUeJ.jpg"
+    :publication-date "January 20th"
+    :likes 32
+    :title "The song you won't ever stop singing.  No matter how hard you try."
+    :subtitle "This is the description for the post"}])
+
+(defn article-preview-area [article]
+  (let [{:keys [author-name
+                profile-pic-url
+                publication-date
+                likes
+                title
+                subtitle]}
+        article]
+    [:div.article-preview
+     ^{:key (str title author-name)}
+     [:div.article-meta
+      [:a
+       {:href "profile.html"}
+       [:img {:src profile-pic-url}]]
+      [:div.info
+       [:a.author {:href ""}
+        author-name
+        [:span.date publication-date]]]
+      [:button.btn.btn-outline-primary.btn-sm.pull-xs-right
+       [:i.ion-heart] (str " " likes)]]
+     [:a.preview-link
+      [:h1 title]
+      [:p subtitle]
+      [:span "Read more..."]]]))
+
 (defn home-page []
-  [:span
-   "This is the home page"])
+  [:div.home-page
+   [home-banner]
+   [:div.container.page
+    [:div.row
+
+     [:div.col-md-9
+      [:div.feed-toggle
+       [:ul.nav.nav-pills.outline-active
+        [:li.nav-item
+         [:a.nav-link.disabled
+          {:href ""}
+          "Your Feed"]]
+        [:li.nav-item
+         [:a.nav-link.active
+          {:href ""}
+          "Global Feed"]]]]]]
+    (map #(article-preview-area %) article-samples)]])
 
 (defn about-page []
   [:span
