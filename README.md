@@ -1,36 +1,20 @@
-# real-world
+# real-world frontend
 
-FIXME: description
+An implementation of [Real World Application](https://github.com/gothinkster/realworld) frontend in Clojurescript/Re-frame
 
-## Installation
+## Why?
 
-Download from http://example.com/FIXME.
+I wanted to do a project in Clojurescript 100% from the ground up. I started this project with
 
-## Usage
+```
+$ lein new app real-world
+```
 
-FIXME: explanation
-
-    $ java -jar real-world-0.1.0-standalone.jar [args]
-
-## Options
-
-FIXME: listing of options this app accepts.
-
-## Examples
-
-...
-
-### Bugs
-
-...
-
-### Any Other Sections
-### That You Think
-### Might be Useful
+and continued from there.  Not using any lein templates has been (somewhat) enlightening.
 
 ## License
 
-Copyright © 2019 FIXME
+Copyright © 2019 Brandon Olivier
 
 This program and the accompanying materials are made available under the
 terms of the Eclipse Public License 2.0 which is available at
