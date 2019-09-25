@@ -1,6 +1,7 @@
 {
  :dev-http {8080 "public"}
- 
+ :source-paths
+ ["src/main"]
  :dependencies
  [[cider/cider-nrepl "0.16.0-SNAPSHOT"]]
  :builds {:frontend
